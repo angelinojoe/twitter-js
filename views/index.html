@@ -14,10 +14,11 @@
     <div class="col-md-9">
 
       <!-- display tweets here -->
+      <ul>
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+        <li id='tweet'><img id='profilePic' src='http://www.adweek.com/socialtimes/files/2012/03/twitter-egg-icon.jpg' alt='placeholder'></img><b>{{tweet.name}}</b><br> {{tweet.content}}</li>
       {% endfor %}
-
+      </ul>
     </div>
   </div>
 

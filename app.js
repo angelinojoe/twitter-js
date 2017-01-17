@@ -21,14 +21,14 @@ app.use(express.static('public'));
 // });
 
 //USING NUNJUCKS TEMPLATE IN VIEWS/INDEX.HTML
-var locals = {
-    title: 'An Example',
-    people: [
-        { name: 'Gandalf'},
-        { name: 'Frodo' },
-        { name: 'Hermione'}
-    ]
-};
+// var locals = {
+//     title: 'An Example',
+//     people: [
+//         { name: 'Gandalf'},
+//         { name: 'Frodo' },
+//         { name: 'Hermione'}
+//     ]
+// };
 
 //takes an extension and a function to render that extensions
 app.engine('html', nunjucks.render);
@@ -37,7 +37,8 @@ app.set('view engine', 'html');
 //Tell nunjucks that your templates live at path and flip any feature on or off with the opts hash
 nunjucks.configure('views', {noCache: true});
 //Do you need an app render and a nunjucks render
-nunjucks.render('index.html', locals, function (err, output) {
+nunjucks.render('index.html', function (err, output) {
+    if (err) console.log(err);
     console.log(output);
 });
 
