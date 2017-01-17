@@ -5,7 +5,11 @@ const volleyball = require('volleyball');
 const nunjucks = require('nunjucks');
 //put routes in a module and register as middleware
 const routes = require('./routes/');
+const bodyParser = require('body-parser');
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 //ASK ABOUT VOLLEYBALL in Q&A
 app.use(volleyball);
 

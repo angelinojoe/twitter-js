@@ -16,10 +16,25 @@
       <!-- display tweets here -->
       <ul>
       {% for tweet in tweets %}
-        <li id='tweet'><img id='profilePic' src='http://www.adweek.com/socialtimes/files/2012/03/twitter-egg-icon.jpg' alt='placeholder'></img><b>{{tweet.name}}</b><br> {{tweet.content}}</li>
+
+        <li id='tweet'><img id='profilePic' src='http://www.adweek.com/socialtimes/files/2012/03/twitter-egg-icon.jpg'></img><a href="/users/{{tweet.name}}"> <b>{{tweet.name}}</a></b><br>  - {{tweet.content}} <br> <a href="/tweets/{{tweet.id}}"><b>{{tweet.id}}</a></b> </li>
+
       {% endfor %}
       </ul>
     </div>
   </div>
+
+
+{% if showForm %}
+  <form action="/tweets" method="POST">
+    <label for="name_field">Name:</label>
+    <input name="name" type="text" id="name_field" value="This is text">
+
+    <label for="text_field">Text:</label>
+    <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+    <input type="submit" value="Submit" />
+  </form>
+{% endif %}
 
 {% endblock %}
