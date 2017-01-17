@@ -3,9 +3,17 @@ const express = require( 'express' );
 const app = express(); // creates an instance of an express application
 const volleyball = require('volleyball');
 const nunjucks = require('nunjucks');
+//put routes in a module and register as middleware
+const routes = require('./routes/');
 
 //ASK ABOUT VOLLEYBALL in Q&A
 app.use(volleyball);
+
+//all routes now sent to /routes/index.js
+app.use('/', routes);
+app.use(express.static('public'));
+
+
 
 // app.use('/', function(req, res, next){
 //     console.log(chalk.blue(req.method, req.originalUrl));
@@ -32,16 +40,6 @@ nunjucks.configure('views', {noCache: true});
 nunjucks.render('index.html', locals, function (err, output) {
     console.log(output);
 });
-
-app.get('/', function(req, res){
-    res.render('index', locals );
-});
-
-app.get('/news', function(req, res){
-    res.send('NEWS');
-});
-
-
 
 app.listen(3000, function(){
     console.log('server listening');
