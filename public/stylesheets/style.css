@@ -2,10 +2,21 @@ html,
 body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
-
+  background-image: url('http://assets.creativity-online.com/images/work/print/s/t/r/Stromae_Carmen20150415162327.jpg');
 }
 
 /* Wrapper for page content to push down footer */
+
+#whiteText {
+  color: white;
+}
+
+#profileImg {
+  height: 200px;
+  width: 250px;
+  padding-bottom: 10px;
+}
+
 #wrap {
   min-height: 100%;
   height: auto;

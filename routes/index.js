@@ -35,6 +35,4 @@ router.post('/tweets', function(req, res) {
 
 });
 
-
-
 module.exports = router;

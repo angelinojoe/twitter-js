@@ -38,9 +38,3 @@ for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
-// console.log(find(function(i){
-//     console.log(i.name);
-//     return i.name === 'Nimit';
-// }));
-
-// console.log(list());

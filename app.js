@@ -18,22 +18,6 @@ app.use('/', routes);
 app.use(express.static('public'));
 
 
-
-// app.use('/', function(req, res, next){
-//     console.log(chalk.blue(req.method, req.originalUrl));
-//     next();
-// });
-
-//USING NUNJUCKS TEMPLATE IN VIEWS/INDEX.HTML
-// var locals = {
-//     title: 'An Example',
-//     people: [
-//         { name: 'Gandalf'},
-//         { name: 'Frodo' },
-//         { name: 'Hermione'}
-//     ]
-// };
-
 //takes an extension and a function to render that extensions
 app.engine('html', nunjucks.render);
 //set default view engine to html
